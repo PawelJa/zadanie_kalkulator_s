@@ -1,18 +1,30 @@
 package com.calculator.app;
 
 import com.calculator.app.dao.CountryDAO;
+import com.calculator.app.entity.Country;
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.Assert.assertArrayEquals;
 import static org.springframework.test.util.AssertionErrors.assertTrue;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class FileReaderTest {
+public class CountryDAOTest {
 
     private CountryDAO countryDAO = new CountryDAO();
     private File dataFile = countryDAO.dataFile;
+
+    private Object[] getArrayToTestListOfCountries() {
+        Object[] listExpected = new Object[2];
+        listExpected[0] = new Country("UK", "United Kingdom", 600, 25, "GBP");
+        listExpected[1] = new Country("DE", "Germany", 800, 20, "EUR");
+        return listExpected;
+    }
 
     @Test
     public void testFileExist() {
@@ -40,6 +52,19 @@ public class FileReaderTest {
             isNotEmpty = true;
         }
         assertTrue("File is empty", isNotEmptyExpected == isNotEmpty);
-        }
+    }
+
+    @Test
+    public void testCreateList() {
+        Object[] listFromCountryDAO = countryDAO.createList().toArray();
+        Assert.assertNotNull(listFromCountryDAO);
+        assertArrayEquals(getArrayToTestListOfCountries(), listFromCountryDAO);
+    }
+
+    @Test
+    public void testGetList() {
+        Object[] listFromCountryDAO = countryDAO.getList().toArray();
+        assertArrayEquals(getArrayToTestListOfCountries(),listFromCountryDAO);
+    }
 
 }
