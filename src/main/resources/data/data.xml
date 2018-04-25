@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <countries>
     <country id="UK">
-        <fullname>United Kingdom</fullname>
+        <fullName>United Kingdom</fullName>
         <taxPercent>25</taxPercent>
         <oncost>600</oncost>
         <currency>GBP</currency>
     </country>
     <country id="DE">
-        <fullname>Germany</fullname>
+        <fullName>Germany</fullName>
         <taxPercent>20</taxPercent>
         <oncost>800</oncost>
         <currency>EUR</currency>
