@@ -1,7 +1,13 @@
 #content {
     width: 600px;
-    height: 600px;
     border: 1px solid #003399;
     text-align: center;
     margin: 0 auto;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+h2 {
+    font-size: 16px;
+    font-family: Sans-Serif;
 }

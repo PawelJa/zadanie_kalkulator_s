@@ -10,8 +10,13 @@
     <h2>Please select country and enter pay rate per day</h2>
     <select id="countries">
     </select>
-    <input id="payRate" type="number">
+    <input id="payRate" type="number" min="0">
     <br>
+    <span id="error"></span>
+    <br>
+    <button>Calculate</button>
+
+    <br><br>
     <div id='earnings'>
     </div>
 </div>

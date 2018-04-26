@@ -12,4 +12,10 @@
         <oncost>800</oncost>
         <currency>EUR</currency>
     </country>
+    <country id="PL">
+        <fullName>Poland</fullName>
+        <taxPercent>19</taxPercent>
+        <oncost>1200</oncost>
+        <currency>PLN</currency>
+    </country>
 </countries>
