@@ -1,7 +1,6 @@
 package com.calculator.app.dao;
 
 import com.calculator.app.entity.Currency;
-import com.calculator.app.entity.Rate;
 import com.google.gson.Gson;
 import org.springframework.beans.propertyeditors.CurrencyEditor;
 import org.springframework.stereotype.Component;

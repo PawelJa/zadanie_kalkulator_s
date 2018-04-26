@@ -19,7 +19,7 @@ import java.util.List;
 @Component
 public class CountryDAO {
 
-    private String dataSource = "src/main/resources/data/data.xml";
+    final private String dataSource = "src/main/resources/data/data.xml";
     public File dataFile = new File(dataSource);
 
     private List<Country> list;

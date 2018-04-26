@@ -17,7 +17,7 @@ import java.util.List;
 public class CountryDAOTest {
 
     private CountryDAO countryDAO = new CountryDAO();
-    private File dataFile = countryDAO.dataFile;
+    private File dataFile = countryDAO.dataFileForTests;
 
     private Object[] getArrayToTestListOfCountries() {
         Object[] listExpected = new Object[2];
@@ -65,6 +65,17 @@ public class CountryDAOTest {
     public void testGetList() {
         Object[] listFromCountryDAO = countryDAO.getList().toArray();
         assertArrayEquals(getArrayToTestListOfCountries(),listFromCountryDAO);
+    }
+
+    @Test
+    public void testFindOne() {
+        Country countryExpected = new Country("UK", "United Kingdom", 600, 25, "GBP");
+        Country countryFromCountryDao = countryDAO.findOne("UK");
+        Assert.assertTrue(countryExpected.getId().equals(countryFromCountryDao.getId()));
+        Assert.assertTrue(countryExpected.getFullName().equals(countryFromCountryDao.getFullName()));
+        Assert.assertTrue(countryExpected.getOncost() == countryFromCountryDao.getOncost());
+        Assert.assertTrue(countryExpected.getTaxPercent() == countryFromCountryDao.getTaxPercent());
+        Assert.assertTrue(countryExpected.getCurrency().equals(countryFromCountryDao.getCurrency()));
     }
 
 }
