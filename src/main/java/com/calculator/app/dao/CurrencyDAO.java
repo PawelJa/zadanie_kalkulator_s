@@ -23,6 +23,10 @@ public class CurrencyDAO {
     private String currency;
 //    private double currencyRate;
 
+
+    public CurrencyDAO() {
+    }
+
     public CurrencyDAO (String currency) throws IOException {
         this.currency = currency;
 //        setCurrencyRate();

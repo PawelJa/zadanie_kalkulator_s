@@ -15,12 +15,15 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 @Component
 public class CountryDAO {
 
     final private String dataSource = "src/main/resources/data/data.xml";
+    final private String dataSourceForTests = "src/main/resources/data/data-test.xml";
     public File dataFile = new File(dataSource);
+    public File dataFileForTests = new File(dataSourceForTests);
 
     private List<Country> list;
 
@@ -38,9 +41,6 @@ public class CountryDAO {
             doc.getDocumentElement().normalize();
 
             NodeList nList = doc.getElementsByTagName("country");
-            System.out.println("Root: " + doc.getDocumentElement().getNodeName());
-            System.out.println("*********");
-            System.out.println(nList.getLength());
             for (int i=0; i<nList.getLength(); i++) {
                 Node nNode = nList.item(i);
 
@@ -53,7 +53,6 @@ public class CountryDAO {
                     country.setTaxPercent(Double.valueOf(eElement.getElementsByTagName("taxPercent").item(0).getTextContent()));
                     country.setCurrency(eElement.getElementsByTagName("currency").item(0).getTextContent());
                     list.add(country);
-                    System.out.println(country);
                 }
 
             }
@@ -69,5 +68,11 @@ public class CountryDAO {
 
     public List<Country> getList() {
         return this.list;
+    }
+
+    public Country findOne(String id){
+        Predicate<Country> countryPredicate = c -> c.getId().equals(id);
+        Country country = this.list.stream().filter(countryPredicate).findFirst().get();
+        return country;
     }
 }
