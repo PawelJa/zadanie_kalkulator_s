@@ -13,14 +13,12 @@ $(document).ready(function () {
         $.ajax({
             url: API_URL + "country"
         }).done(function (countries) {
-            // console.log(countries)
             showCountries(countries)
         })
     }
 
     function showCountries(countries) {
         var select = $('select')
-        // console.log(select);
 
         countries.forEach( function (e) {
             select.append("<option value='" + e.id + "'>" + e.fullName + "</option>");
@@ -33,8 +31,6 @@ $(document).ready(function () {
         var selectedId = $('select').val();
         var value = $('#payRate').val();
 
-        var id = null;
-        var fullName = null;
 
         if ($.isNumeric(value) && value > 0) {
             $('#error').text('');
@@ -42,9 +38,7 @@ $(document).ready(function () {
             $.ajax({
                 url: API_URL + "country"
             }).done(function (countries) {
-                // console.log(countries)
                 var result = countries.find(x => x.id === selectedId);
-                // console.log(result)
 
                 var objToSend = {
                     id : result.id,
@@ -64,17 +58,16 @@ $(document).ready(function () {
                     body: JSON.stringify(objToSend)
                 };
 
-                // $.ajax({
-                //     url: API_URL+'/earnings/' + value, myInit).done(function () {
-                //
-                // })
-                // })
+
 
                 fetch(API_URL+'/earnings/' + value, myInit).then(resp => resp.json()).then(resp => {
                     var earnings = $('#earnings')
                     earnings.empty()
-                    earnings.append('<div class="earningsChild">Your earnings:</div>');
-                    earnings.append('<div class="earningsChild">' + resp.value + '</div>')
+                    earnings.append('<div class="earningsChild">Your earnings:</div><br>');
+                if (resp.value < 0) {
+                    earnings.append('<div class="earningsChild"> Not good... You earn less money then your costs are')
+                }
+                    earnings.append('<div class="earningsChild">' + resp.value + ' PLN</div>')
                     earnings.append('<div class="earningsChild">Used rate from: ' + resp.date + '</div>');
                 });
 

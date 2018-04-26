@@ -19,30 +19,19 @@ import java.time.LocalDate;
 public class CurrencyDAO {
 
     final private String jsonUrlPart1 = "http://api.nbp.pl/api/exchangerates/rates/c/";
-//    private String date;
     private String currency;
-//    private double currencyRate;
 
 
     public CurrencyDAO() {
     }
 
-    public CurrencyDAO (String currency) throws IOException {
+    public CurrencyDAO (String currency) {
         this.currency = currency;
-//        setCurrencyRate();
     }
 
     public String getJsonUrlPart1() {
         return jsonUrlPart1;
     }
-
-//    public String getDate() {
-//        return date;
-//    }
-//
-//    public void setDate(String date) {
-//        this.date = date;
-//    }
 
     public String getCurrency() {
         return currency;
@@ -52,53 +41,12 @@ public class CurrencyDAO {
         this.currency = currency;
     }
 
-//    public double getCurrencyRate() {
-//        return currencyRate;
-//    }
-
 
     public String createUrl() {
         String url = jsonUrlPart1 + this.currency;
         return url;
     }
 
-//    public void setCurrencyRate() throws IOException {
-//        LocalDate localDate = LocalDate.now();
-//        this.date = localDate.toString();
-//        int code = getResponseCode(this.date);
-//        int i = 0;
-//        LocalDate dateToCheck = null;
-//        while (code != 200 || i == 30) {
-//            i++;
-//            dateToCheck = localDate.minusDays(i);
-//            code = getResponseCode(dateToCheck.toString());
-//        }
-//        if (code == 200) {
-//            this.date = dateToCheck.toString();
-//        }
-//        URL url = new URL(createUrl());
-//
-//        try (InputStream is = url.openStream();
-//             JsonReader jsonReader = Json.createReader(is)) {
-//
-//            JsonObject object = jsonReader.readObject();
-//            JsonArray results = object.getJsonArray("rates");
-//            for (JsonObject result : results.getValuesAs(JsonObject.class)) {
-//                this.currencyRate = Double.valueOf(result.get("bid").toString());
-//            }
-//        }
-//    }
-
-//    private int getResponseCode(String date) throws IOException {
-//        int code;
-//        this.date = date;
-//        URL url = new URL(createUrl());
-//        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-//        connection.setRequestMethod("GET");
-//        connection.connect();
-//        code = connection.getResponseCode();
-//        return code;
-//    }
 
     public Currency getRate(String currency) throws IOException {
         this.currency = currency;
