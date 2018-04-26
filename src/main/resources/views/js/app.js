@@ -66,9 +66,12 @@ $(document).ready(function () {
                     earnings.append('<div class="earningsChild">Your earnings:</div><br>');
                 if (resp.value < 0) {
                     earnings.append('<div class="earningsChild"> Not good... You earn less money then your costs are')
-                }
+                    earnings.append('<div class="earningsChild" style="color: red">' + resp.value + ' PLN</div>')
+
+                } else {
                     earnings.append('<div class="earningsChild">' + resp.value + ' PLN</div>')
-                    earnings.append('<div class="earningsChild">Used rate from: ' + resp.date + '</div>');
+                }
+                earnings.append('<div class="earningsChild">Last update of rate: ' + resp.date + '</div>');
                 });
 
             })
