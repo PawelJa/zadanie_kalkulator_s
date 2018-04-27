@@ -20,9 +20,10 @@ public class CountryDAOTest {
     private File dataFile = countryDAO.dataFileForTests;
 
     private Object[] getArrayToTestListOfCountries() {
-        Object[] listExpected = new Object[2];
+        Object[] listExpected = new Object[3];
         listExpected[0] = new Country("UK", "United Kingdom", 600, 25, "GBP");
         listExpected[1] = new Country("DE", "Germany", 800, 20, "EUR");
+        listExpected[2] = new Country("PL", "Poland", 1200, 19, "PLN");
         return listExpected;
     }
 
