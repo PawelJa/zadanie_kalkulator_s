@@ -21,7 +21,7 @@ public class EarningServiceTest {
 
     @Test
     public void testGetEarnedMoney() throws IOException {
-        Earning earningExpected = new Earning("2018-04-24", "eur/2018-04-24", 42383.04);
+        Earning earningExpected = new Earning("2018-04-24", "eur/2018-04-24", 33836.17);
         Earning earningFromService = earningService.getEarnedMoney(country, 600);
         System.out.println(earningExpected.toString());
         System.out.println(earningFromService.toString());

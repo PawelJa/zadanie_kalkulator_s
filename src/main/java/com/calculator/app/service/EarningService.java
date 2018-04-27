@@ -39,7 +39,7 @@ public class EarningService {
             System.out.println(daysCounter * earningPerDay);
             System.out.println(1 + (country.getTaxPercent() / 100));
             System.out.println(country.getOncost());
-            double temp = (((daysCounter * earningPerDay) / (1 + (country.getTaxPercent() / 100))) - country.getOncost()) * currency.getBid();
+            double temp = (((daysCounter * (earningPerDay/1.23)) / (1 + (country.getTaxPercent() / 100))) - country.getOncost()) * currency.getBid();
             double truncatedDouble = BigDecimal.valueOf(temp).setScale(2, RoundingMode.HALF_UP).doubleValue();
             earning.setValue(Double.valueOf(truncatedDouble));
         }
