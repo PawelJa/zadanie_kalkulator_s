@@ -46,6 +46,9 @@ into section:
 </countries>
 
 for example:
+
+Some basic Git commands are:
+```
 <countries>
 	<countries id= /*shortcut of country name*/>
 		<fullName> [*full name of Country *] </fullName>
@@ -56,5 +59,4 @@ for example:
 </countries>
 
 
-# ---
-
+```
