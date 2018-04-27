@@ -32,24 +32,30 @@ to run front-end run file `src/main/resources/views/index.html`
 ## Adding new countries to database file
 In file `src/main/resources/data/data.xml` you can add your own countries to api.
 Add complited lines:
-><countries id= /*shortcut of country name*/ >
->	<fullName> /*full name of Country */ </fullName>
->	<taxPErcent> /*tax in % in this country*/ </taxPercent>
->	<oncost> /* oncosts in this country */ </oncost>
->	<currency> /* simbol of currency */ </currency>
-></country>
+```
+<countries id= /*shortcut of country name*/ >
+	<fullName> /*full name of Country */ </fullName>
+	<taxPErcent> /*tax in % in this country*/ </taxPercent>
+	<oncost> /* oncosts in this country */ </oncost>
+	<currency> /* simbol of currency */ </currency>
+</country>
+```
 
 into section:
-><countries>
->	here
-></countries>
+```
+<countries>
+	_here_
+</countries>
+```
 
 for example:
-><countries>
->	<countries id="`shortcut of country name`">
->		<fullName>`full name of Country`</fullName>
->		<taxPErcent>`tax in % in this country`</taxPercent>
->		<oncost>`total oncosts in this country`</oncost>
->		<currency>`simbol of currency`</currency>
->	</country>
-></countries>
+```
+<countries>
+	<countries id="_shortcut of country name_">
+		<fullName>_full name of Country_</fullName>
+		<taxPErcent>_tax in % in this country_</taxPercent>
+		<oncost>_total oncosts in this country_</oncost>
+		<currency>_simbol of currency_</currency>
+	</country>
+</countries>
+```
