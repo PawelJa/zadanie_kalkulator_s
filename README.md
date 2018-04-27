@@ -6,12 +6,12 @@ Project created to calculate earnings per month using Api from NBP to get actual
 As data source is used XML file. Default, there are 3 countries available : Uunited Kingdom, Germany and Poland but You can add your own countries.
 
 Used:
--Java
--Spring Boot
--HTML
--CSS
--JavaSCript
--jQuery
+ - Java
+ - Spring Boot
+ - HTML
+ - CSS
+ - JavaSCript
+ - jQuery
 
 
 # Runing jUnit tests
@@ -21,11 +21,11 @@ in main directory of project use command `mvn test`
 
 # Build and run application
 
-**Building:
+**Building:** 
 in main directory of project use command `mvn spring-boot:run`
 Default port for application: 8080
 
-**Running:
+**Running:**
 to run front-end run file `src/main/resources/views/index.html`
 
 
