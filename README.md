@@ -21,19 +21,19 @@ in main directory of project use command [*mvn test*]
 
 # Build and run application
 
-Building:
+**Building:
 in main directory of project use command [*mvn spring-boot:run*]
 Default port for application: 8080
 
-Running:
-to run front-end run file [*src/main/resources/views/index.html*]
+**Running:
+to run front-end run file [\\*src/main/resources/views/index.html\*]
 
 
 # Adding new countries to database file
 In file [*(src/main/resources/data/data.xml)*] you can add your own countries to api.
 Add complited lines:
 
-<countries id= /*shortcut of country name*/>
+<countries id= /*shortcut of country name*/ >
 	<fullName> /*full name of Country */ </fullName>
 	<taxPErcent> /*tax in % in this country*/ </taxPercent>
 	<oncost> /* oncosts in this country */ </oncost>
@@ -54,4 +54,7 @@ for example:
 		<currency> /* simbol of currency */ </currency>
 </country>
 </countries>
+
+
+# ---
 
