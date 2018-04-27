@@ -34,7 +34,7 @@ In file `src/main/resources/data/data.xml` you can add your own countries to api
 Add complited lines:
 ```
 <countries id= /*shortcut of country name*/ >
-	<fullName> /*full name of Country */ </fullName>
+	<fullName> `full name of Country ` </fullName>
 	<taxPErcent> /*tax in % in this country*/ </taxPercent>
 	<oncost> /* oncosts in this country */ </oncost>
 	<currency> /* simbol of currency */ </currency>
