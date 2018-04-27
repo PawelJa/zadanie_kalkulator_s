@@ -49,9 +49,11 @@ for example:
 <countries>
 	<countries id=" *shortcut of country name* ">
 		<fullName> *full name of Country* </fullName>
-		<taxPErcent> *tax in % in this country* </taxPercent>
+		<taxPercent> *tax in % in this country* </taxPercent>
 		<oncost> *oncosts in this country* </oncost>
 		<currency> *simbol of currency* </currency>
 </country>
 </countries>
 
+
+-
